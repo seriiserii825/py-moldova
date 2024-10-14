@@ -1,17 +1,14 @@
 import turtle
 import pandas
-from myVersion import myVersion
-
-# myVersion()
 
 screen = turtle.Screen()
-screen.title("U.S. States Game")
-image = "states.gif"
-screen.setup(width=725, height=491, startx=20, starty=20)
+screen.title("Moldova")
+image = "moldova-clear.gif"
+screen.setup(width=725, height=800, startx=20, starty=20)
 screen.addshape(image)
 turtle.shape(image)
 
-data = pandas.read_csv("50_states.csv")
+data = pandas.read_csv("states.csv")
 all_states = data.state.to_list()
 guessed_states = []
 
@@ -41,4 +38,10 @@ print(f"states_to_learn: {states_to_learn}")
 new_data = pandas.DataFrame(states_to_learn)
 new_data.to_csv("states_to_learn.csv")
 
-# turtle.mainloop()
+
+# def get_mouse_click_coor(x, y):
+#     print(x, y)
+#
+# turtle.onscreenclick(get_mouse_click_coor)
+
+turtle.mainloop()
